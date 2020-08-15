@@ -3,32 +3,66 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Hello Bulma!</title>
+    <title>Elderberry Flights</title>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
-    <section class="section">
-      <div class="container">
-        <div class="columns">
-          <div class="column is-one-third"></div>
+  <body class="mainBody">
+    <h1 id="header">ELDERBERRY FLIGHTS</h1>
+    <div class="container masterContainer">
+      <br />
+      <br />
+      <br />
+      <br />
+      <span id="directionText"
+        ><em
+          >Please enter the departure and destination for the top five cheapest
+          flights</em
+        ></span
+      >
+      <br />
+      <br />
+      <div class="row justify-content-md-center cityInput">
+        <div class="col col-lg-4">
+          <input
+            class="input is-rounded"
+            type="text"
+            placeholder="Departure City"
+          />
         </div>
-        <div class="columns">
-          <div class="column is-one-third"></div>
-        </div>
-        <div class="columns">
-          <div class="column is-one-third">Which City are you going to?</div>
-          <div class="column"></div>
-          <div class="column">Which City are you leaving from?</div>
-        </div>
-        <div class="columns">
-          <div class="column is-one-third"></div>
-          <div class="column">Search</div>
-          <div class="column"></div>
+        <div class="col-md-auto"></div>
+        <div class="col col-lg-4">
+          <input
+            class="input is-rounded"
+            type="text"
+            placeholder="Destination City"
+          />
         </div>
       </div>
-    </section>
+      <button class="button is-rounded searchBtn">Search</button>
+
+      <div class="row">
+        <div class="col">
+          <div class="card">
+            <div class="card-content"></div>
+          </div>
+        </div>
+        <div class="col-md-auto"></div>
+        <div class="col col-lg-4">
+          <div class="card">
+            <div class="card-content"></div>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
