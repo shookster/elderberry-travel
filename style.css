@@ -1,0 +1,34 @@
+.masterContainer {
+  background-color: rgb(219, 239, 243);
+  height: max-content;
+}
+
+#header {
+  text-align: center;
+  color: white;
+  background-color: black;
+}
+
+.mainBody {
+  /* background-color: rgb(211, 207, 202); */
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+#directionText {
+  text-align: center;
+  margin-left: 200px;
+  font-size: large;
+}
+
+.cityInput {
+  margin-bottom: 10px;
+}
+
+.searchBtn {
+  margin-left: 45%;
+}
+
+.row {
+  margin-top: 10px;
+}
