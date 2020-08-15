@@ -15,7 +15,7 @@
 // }
 
 $(".searchBtn").on("click", function () {
-  console.log("button test");
+
   var settings = {
     async: true,
     crossDomain: true,
@@ -32,36 +32,36 @@ $(".searchBtn").on("click", function () {
   $.ajax(settings).done(function (response) {
     console.log(response);
   });
+  var userInput = $(".input").val();
+    $(".input").val("");
+  var settings2 = {
+    
+    "async": true,
+    "crossDomain": true,
+    "url": "https://covid-19-data.p.rapidapi.com/country?format=json&name="+userInput,
+    "method": "GET",
+    "headers": {
+      "x-rapidapi-host": "covid-19-data.p.rapidapi.com",
+      "x-rapidapi-key": "bc82f216camsh0d5edd3fce9ef67p15460fjsn388b99463a3f"
+      
+    }
+  }
+  console.log(userInput);
+
+  $.ajax(settings2).done(function (response) {
+    console.log(response);
+  
+      const countriesEl = $(".countries");
+      const totalcasesEl = $(".confirmed");
+      const newcasesEl = $(".new");
+      const totaldeathsEl = $(".deaths");    
+      const activecasesEl = $(".active");
+      countriesEl.text(response.Countries);
+      totalcasesEl.text(response.confirmed);
+      newcasesEl.text(response.NewCases);
+      totaldeathsEl.text(response.deaths);
+      activecasesEl.text(response.active);
+      console.log(totalcasesEl);
+  });
+
 });
-
-
-var settings = {
-	"async": true,
-	"crossDomain": true,
-	"url": "https://covid-19-data.p.rapidapi.com/help/countries?format=json",
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-host": "covid-19-data.p.rapidapi.com",
-		"x-rapidapi-key": "bc82f216camsh0d5edd3fce9ef67p15460fjsn388b99463a3f"
-	}
-}
-
-$.ajax(settings).done(function (response) {
-	console.log(response);
-});
-
-$.ajax({
-  url: queryURL,
-  method: "GET"
-}).then(function(response) {
-  // Create a new table row element
-  var tRow = $("<tr>");
-​
-  // Methods run on jQuery selectors return the selector they we run on
-  // This is why we can create and save a reference to a td in the same statement we update its text
-  var countriesTd = $("<td>").text(response.Countries);
-  var totalcasesTd = $("<td>").text(response.TotalCases);
-  var newcasesTd = $("<td>").text(response.NewCases);
-  var totaldeathsTd = $("<td>").text(response.TotalDeaths);    
-  var activecasesTd = $("<td>").text(response.ActiveCases);
- });
