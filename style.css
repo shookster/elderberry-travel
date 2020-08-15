@@ -2,6 +2,7 @@
     background-color: rgb(219, 239, 243);
     height: max-content;
     padding: 20px;
+    min-width: 80%; 
   }
   
   #header {

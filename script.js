@@ -49,3 +49,19 @@ var settings = {
 $.ajax(settings).done(function (response) {
 	console.log(response);
 });
+
+$.ajax({
+  url: queryURL,
+  method: "GET"
+}).then(function(response) {
+  // Create a new table row element
+  var tRow = $("<tr>");
+​
+  // Methods run on jQuery selectors return the selector they we run on
+  // This is why we can create and save a reference to a td in the same statement we update its text
+  var countriesTd = $("<td>").text(response.Countries);
+  var totalcasesTd = $("<td>").text(response.TotalCases);
+  var newcasesTd = $("<td>").text(response.NewCases);
+  var totaldeathsTd = $("<td>").text(response.TotalDeaths);    
+  var activecasesTd = $("<td>").text(response.ActiveCases);
+ });
