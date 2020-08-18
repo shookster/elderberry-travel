@@ -1,19 +1,3 @@
-// function displayFlight() {
-//   // console.log(savedCities);
-//   var APIkey = "473028eaf3mshe44936fe64e187ep12d58fjsn591246548720";
-
-//   var queryURL =
-//     "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/autosuggest/v1.0/UK/GBP/en-GB/?query=Stockholm" +
-//     city +
-//     "&appid=" +
-//     APIkey;
-
-//   $.ajax({
-//     url: queryURL,
-//     method: "GET",
-//   }).then(function (response) {});
-// }
-
 $(".searchBtn").on("click", function () {
   console.log("button test");
 
@@ -44,6 +28,21 @@ $(".searchBtn").on("click", function () {
     console.log(response);
     departureInput = response.Places[0].PlaceId;
     console.log(departureInput, "this is the departure");
+
+    // Get Destination city from input box
+    var getdestinationCity = {
+      async: true,
+      crossDomain: true,
+      url:
+        "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/autosuggest/v1.0/us/GBP/en-GB/?query=" +
+        destinationCityEl,
+      method: "GET",
+      headers: {
+        "x-rapidapi-host":
+          "skyscanner-skyscanner-flight-search-v1.p.rapidapi.com",
+        "x-rapidapi-key": "473028eaf3mshe44936fe64e187ep12d58fjsn591246548720",
+      },
+    };
 
     $.ajax(getdestinationCity).done(function (response) {
       event.preventDefault();
@@ -161,19 +160,4 @@ $(".searchBtn").on("click", function () {
       });
     });
   });
-
-  // Get Destination city from input box
-  var getdestinationCity = {
-    async: true,
-    crossDomain: true,
-    url:
-      "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/autosuggest/v1.0/us/GBP/en-GB/?query=" +
-      destinationCityEl,
-    method: "GET",
-    headers: {
-      "x-rapidapi-host":
-        "skyscanner-skyscanner-flight-search-v1.p.rapidapi.com",
-      "x-rapidapi-key": "473028eaf3mshe44936fe64e187ep12d58fjsn591246548720",
-    },
-  };
 });
