@@ -12,7 +12,7 @@
 
 ## Author
 
-👤 **Ethan Shook**
+👤 **Ethan Shook,** **Sunny Babal,** **Zekarias Negassa,** **Ryan Ferguson**
 
 * Website: https://www.shooktown.com
 * Twitter: [@ethanshook](https://twitter.com/ethanshook)
